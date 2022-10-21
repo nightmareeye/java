@@ -3,7 +3,7 @@ package pz02;
 public class Circle {
 
 	public Dot point;
-	public int rad;
+	public double rad;
 	
 	public Circle() {
 		point.x=0;
@@ -11,9 +11,8 @@ public class Circle {
 		rad=0;
 	}
 	
-	public Circle(Dot center, int radius) {
-		point.x=center.x;
-		point.y=center.y;
+	public Circle(Dot center, double radius) {
+		point = center;
 		rad = radius;
 	}
 	
@@ -22,11 +21,10 @@ public class Circle {
 	}
 	
 	public String toString() {
-		 return "Circle with center ("+point.x+","+point.y+") with radius "+rad;
+		 return "Circle at ("+point.x+","+point.y+") with radius "+rad;
 	}
 	
 	public Boolean equals(Circle c1, Circle c2){
-		if ((c1.point.x==c2.point.x)&&(c1.point.y==c2.point.y)&&(c1.rad==c2.rad)) return true;
-		else return false;
+		return (c1.point.x==c2.point.x)&&(c1.point.y==c2.point.y)&&(c1.rad==c2.rad);
 	}
 }
