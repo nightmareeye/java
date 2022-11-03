@@ -21,7 +21,7 @@ public class Circle implements IDrawable {
 	}
 	
 	public double square(){
-		return 3.14*3.14*rad;
+		return 3.14*rad*rad;
 	}
 	
 	public String toString() {
