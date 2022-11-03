@@ -10,6 +10,11 @@ public class pz02 {
 							  new Circle(new Dot(-1.2,-2), 2.5)};
 		for(int i=0; i<3; i++)
 			System.out.println(CircleArr[i].toString());
+		IDrawable[] risunki = {CircleArr[0], CircleArr[1], CircleArr[2],
+								dotArray[0],dotArray[1],dotArray[2]};
+		for(int i=0; i<6; i++)
+			System.out.println(risunki[i].draw());
+	
 	}
 
 }

@@ -1,9 +1,13 @@
 package pz02;
 
-public class Circle {
+public class Circle implements IDrawable {
 
 	public Dot point;
 	public double rad;
+	
+	public String draw() {
+		return "Circle";
+	}
 	
 	public Circle() {
 		point.x=0;

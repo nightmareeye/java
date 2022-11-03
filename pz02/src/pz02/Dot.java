@@ -1,7 +1,16 @@
 package pz02;
 
-public class Dot {
+
+interface IDrawable{
+	String draw();
+}
+
+public class Dot implements IDrawable {
 	public double x, y;
+	
+	public String draw() {
+		return "Point";
+	}
 	
 	public Dot() {
 		x=0;
