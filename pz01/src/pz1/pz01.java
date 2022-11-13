@@ -2,20 +2,22 @@ package pz1;
 
 public class pz01 {
 	
-	public static void pyram() {
-		System.out.println("Pyramidka:");
+	public static String pyram() {
+		String out = "";
+		out += "Pyramidka:" +"\n";
 		for(int i=0; i<5; i++) {
 			for(int k=0; k<9-2*i;k++) {
-				System.out.print(" ");
+				out+=" ";
 			}
 			for(int j = 0; j<1+i*2;j++) {
-				System.out.print(j+1 +" ");
+				out+=j+1 +" ";
 			}
-			System.out.print("\n");
+			out+="\n";
 		}
+		return out;
 	}
 	
-	public static void change() {
+	public static int[] change() {
 		System.out.println("Changing places:");
 		int[] a = new int[25];
 		for(int i=0; i<25;i++) {
@@ -31,25 +33,25 @@ public class pz01 {
 			System.out.print(a[i] + " ");
 		}
 		System.out.print("\n");
+		return a;
 	}
 	
-	public static int mid() {
-		int[] a= new int[20];
-		for(int i=0; i<20;i++) {
+	public static int mid(int num) {
+		int[] a= new int[num];
+		for(int i=0; i<num;i++) {
 			a[i]=i+1;
 			System.out.print(a[i] + " ");
 		}
 		System.out.print("\n");
 		int mid=0;
-		for(int i=0; i<20;i++) {
+		for(int i=0; i<num;i++) {
 			mid += a[i];
 		}
-		System.out.println("Mid of array: " + mid/20);
-		return mid/20;
+		System.out.println("Mid of array: " + mid/num);
+		return mid/num;
 	}
 	
-	public static void table() {
-		System.out.println("Random table: ");
+	public static int[][] table() {
 		int[][] a = new int[3][5];
 		for(int i=0; i<3; i++)
 		{
@@ -58,16 +60,10 @@ public class pz01 {
 			}
 		}
 		
-		for(int i=0; i<3; i++)
-		{
-			for(int j=0; j<5; j++) {
-				System.out.print(a[i][j] + "  ");
-			}
-			System.out.print("\n");
-		}
+		return a;
 	}
 	
-	public static void scalar() {
+	public static double scalar() {
 		double[] a,b;
 		a=new double[]{10e20, 1223, 10e18, 10e15, 3, 10e-12};
 		b=new double[]{10e20, 2, 10e-22, 10e13, 2111, 10e16};
@@ -77,6 +73,7 @@ public class pz01 {
 			s+=a[k]*b[k];
 		}
 		System.out.println("a.b="+s);
+		return s;
 	}
 	
 	public static boolean del(int num) {
@@ -97,28 +94,38 @@ public class pz01 {
 		return x;
 	}
 	
-	public static void sys(double a, double b, double c,double d,double e,double f) {
-		double x = ((e/f - c/b)/(a/b - d/f));
-		double y = -a/b*x - c/b;
+	public static double[] sys(double a, double b, double c,double d,double e,double f) {
+		double x = ((e*c - f*b)/(b*d - e*a));
+		double y = -((f+d*x)/e);
 		System.out.println("The problem: ");
 		System.out.println(a+"*x + " +b+"*y + "+ c+" = 0");
 		System.out.println(d+"*x + " +e+"*y + "+ f+" = 0");
 		System.out.println("Solutinon: ");
 		System.out.println("x = "+x + " y = "+y);
+		double[] out= {x,y};
+		return out;
 	}
 	
 	public static void main(String[] args) {
-		pyram();
+		String pyramida = pyram();
+		System.out.println(pyramida);
 		System.out.println("------------------");
 		change();
 		System.out.println("------------------");
-		mid();
+		mid(20);
 		System.out.println("------------------");
-		table();
+		int[][] p = table();
+		for(int i=0; i<3; i++)
+		{
+			for(int j=0; j<5; j++) {
+				System.out.print(p[i][j] + "  ");
+			}
+			System.out.print("\n");
+		}
 		System.out.println("------------------");
 		scalar();
 		System.out.println("------------------");
-		sys(2,4,6,1,3,7);
+		sys(2,4,6,1,3,7);		
 		System.out.println("------------------");
 		del(7);
 	}
