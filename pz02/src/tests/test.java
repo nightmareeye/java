@@ -1,10 +1,12 @@
-package pz02;
+package tests;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import junit.framework.TestCase;
+import pz02.Circle;
+import pz02.Dot;
 
 public class test extends TestCase {
 	@Test

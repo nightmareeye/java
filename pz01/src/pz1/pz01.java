@@ -13,7 +13,6 @@ public class pz01 {
 			}
 			System.out.print("\n");
 		}
-		System.out.println("------------------");
 	}
 	
 	public static void change() {
@@ -32,7 +31,6 @@ public class pz01 {
 			System.out.print(a[i] + " ");
 		}
 		System.out.print("\n");
-		System.out.println("------------------");
 	}
 	
 	public static int mid() {
@@ -47,7 +45,6 @@ public class pz01 {
 			mid += a[i];
 		}
 		System.out.println("Mid of array: " + mid/20);
-		System.out.println("------------------");
 		return mid/20;
 	}
 	
@@ -68,7 +65,6 @@ public class pz01 {
 			}
 			System.out.print("\n");
 		}
-		System.out.println("------------------");
 	}
 	
 	public static void scalar() {
@@ -81,7 +77,6 @@ public class pz01 {
 			s+=a[k]*b[k];
 		}
 		System.out.println("a.b="+s);
-		System.out.println("------------------");
 	}
 	
 	public static boolean del(int num) {
@@ -99,28 +94,32 @@ public class pz01 {
 			x=false;
 			System.out.println(num+" doesn't divide by 4");
 		}
-		System.out.println("------------------");
 		return x;
 	}
 	
 	public static void sys(double a, double b, double c,double d,double e,double f) {
-		double x = (e/f - c/b)/(a/b - d/f);
+		double x = ((e/f - c/b)/(a/b - d/f));
 		double y = -a/b*x - c/b;
 		System.out.println("The problem: ");
 		System.out.println(a+"*x + " +b+"*y + "+ c+" = 0");
 		System.out.println(d+"*x + " +e+"*y + "+ f+" = 0");
 		System.out.println("Solutinon: ");
 		System.out.println("x = "+x + " y = "+y);
-		System.out.println("------------------");
 	}
 	
 	public static void main(String[] args) {
 		pyram();
+		System.out.println("------------------");
 		change();
+		System.out.println("------------------");
 		mid();
+		System.out.println("------------------");
 		table();
+		System.out.println("------------------");
 		scalar();
+		System.out.println("------------------");
 		sys(2,4,6,1,3,7);
+		System.out.println("------------------");
 		del(7);
 	}
 }
