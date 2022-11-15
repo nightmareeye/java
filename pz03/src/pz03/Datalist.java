@@ -2,9 +2,14 @@ package pz03;
 
 import java.util.ArrayList;
 
-public class datalist {
-	public ArrayList<Dot> Dotlist = new ArrayList<Dot>();
-	public ArrayList<Circle> Circlelist = new ArrayList<Circle>();
+public class Datalist {
+	public ArrayList<Dot> Dotlist;
+	public ArrayList<Circle> Circlelist;
+	
+	public Datalist() {
+		Dotlist = new ArrayList<Dot>();
+		Circlelist  = new ArrayList<Circle>();
+	}
 	
 	public void addToList(Dot tochka) {
 		Dotlist.add(tochka);
