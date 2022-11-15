@@ -61,6 +61,12 @@ public class test extends TestCase {
 	}
 	
 	@Test
+	public void testDelFalse() {
+		int k = 17;
+		assertEquals(pz01.del(k),false);
+	}
+	
+	@Test
 	public void testSystem() {
 		double a=2,b=4,c=6,d=1,e=3,f=7;
 		double[] result= {5.0,-4.0};
