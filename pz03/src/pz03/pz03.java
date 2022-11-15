@@ -1,6 +1,7 @@
 package pz03;
 
 import java.io.*;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class pz03 {
@@ -54,6 +55,21 @@ public class pz03 {
 				System.out.println("Добавлена окружность с центром в ("+xx+","+yy+"), c радиусом "+ radius);
 				break;			
 			case 3:
+				System.out.println("Выберите опцию:");
+				System.out.println("1. Стандартный вид");
+				System.out.println("2. По возрастанию");
+				System.out.println("3. По убыванию");
+				int j;
+				s = scan.next();
+				j = Integer.parseInt(s);
+				switch(i) {
+				case 1:
+					list.printDots();
+				case 2:
+					
+				}
+				
+				
 				list.printDots();
 				break;
 			case 4:
