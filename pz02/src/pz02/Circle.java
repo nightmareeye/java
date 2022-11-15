@@ -10,8 +10,7 @@ public class Circle implements IDrawable {
 	}
 	
 	public Circle() {
-		point.x=0;
-		point.y=0;
+		point = new Dot(0,0);
 		rad=0;
 	}
 	
@@ -28,7 +27,7 @@ public class Circle implements IDrawable {
 		 return "Circle at ("+point.x+","+point.y+") with radius "+rad;
 	}
 	
-	public Boolean equals(Circle c1, Circle c2){
+	public static Boolean equals(Circle c1, Circle c2){
 		return (c1.point.x==c2.point.x)&&(c1.point.y==c2.point.y)&&(c1.rad==c2.rad);
 	}
 }

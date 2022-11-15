@@ -25,7 +25,7 @@ public class Dot implements IDrawable {
 		return "("+x+","+y+")";
 	}
 	
-	public boolean equals(Dot a, Dot b) {
+	public static boolean equals(Dot a, Dot b) {
 		return (a.x==b.x)&&(a.y==b.y);
 	}
 }

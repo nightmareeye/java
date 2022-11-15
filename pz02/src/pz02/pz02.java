@@ -15,7 +15,7 @@ public class pz02 {
 			System.out.println(i.toString());
 		for(IDrawable i: risunki)
 			System.out.println(i.draw());
-	
+	 
 	}
 
 }
