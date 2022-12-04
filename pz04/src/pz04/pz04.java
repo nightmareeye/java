@@ -76,10 +76,10 @@ public class pz04 {
 					System.out.print(list.toStringDots());
 					break;
 				case 2:
-					list.printIncDots();
+					System.out.print(list.printIncDots());
 					break;
 				case 3:
-					list.printDecDots();
+					System.out.print(list.printDecDots());
 					break;
 				}
 				break;
@@ -96,10 +96,10 @@ public class pz04 {
 					System.out.print(list.toStringCircles());
 					break;
 				case 2:
-					list.printIncCircle();
+					System.out.print(list.printIncCircle());
 					break;
 				case 3:
-					list.printDecCircle();
+					System.out.print(list.printDecCircle());
 					break;
 				}
 				break;
@@ -114,10 +114,14 @@ public class pz04 {
 				switch(jo) {
 				case 1:
 					System.out.println("Введите имя файла:");
-					s = scan.next();	
-					File inputFile = new File(s);
+					s = scan.next();
+					String filename = s;
+					File inputFile = new File(filename);
 					if(inputFile.createNewFile()) {
-						
+						FileWriter myWriter = new FileWriter(filename);
+					      myWriter.write(list.toStringDots());
+					      myWriter.close();
+					      System.out.println("Успешно записано в файл "+ filename);
 					}
 					else {
 						System.out.println("Файл уже существует! Выберите опцию:");
@@ -127,29 +131,110 @@ public class pz04 {
 						int jofile;
 						s = scan.next();
 						jofile = Integer.parseInt(s);
-						if (i<1 || i>3) {
+						if (jofile<1 || jofile>3) {
 							System.out.println("Неправильная опция!");
 							continue;
 						}
 						switch(jofile) {
 						case 1:
+							FileWriter appendWrite = new FileWriter(filename,true);
+							appendWrite.write(list.toStringDots());
+							appendWrite.close();
+						    System.out.println("Успешно записано в файл "+ filename);
 							break;
 						case 2:
+							FileWriter overWrite = new FileWriter(filename,false);
+							overWrite.write(list.toStringDots());
+							overWrite.close();
+						    System.out.println("Успешно записано в файл "+ filename);
 							break;
 						case 3:
 							break;
 						}
 
 					}
-					
-					
-					System.out.print(list.toStringDots());
 					break;
 				case 2:
-					list.printIncDots();
+					System.out.println("Введите имя файла:");
+					s = scan.next();
+					String filenameInc = s;
+					File inputFileInc = new File(filenameInc);
+					if(inputFileInc.createNewFile()) {
+						FileWriter myWriter = new FileWriter(filenameInc);
+					      myWriter.write(list.printIncDots());
+					      myWriter.close();
+					      System.out.println("Успешно записано в файл "+ filenameInc);
+					}
+					else {
+						System.out.println("Файл уже существует! Выберите опцию:");
+						System.out.println("1. Записать в конец файла");
+						System.out.println("2. Перезаписать файл");
+						System.out.println("3. Вернуться назад");
+						int jofile;
+						s = scan.next();
+						jofile = Integer.parseInt(s);
+						if (jofile<1 || jofile>3) {
+							System.out.println("Неправильная опция!");
+							continue;
+						}
+						switch(jofile) {
+						case 1:
+							FileWriter appendWrite = new FileWriter(filenameInc,true);
+							appendWrite.write(list.printIncDots());
+							appendWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameInc);
+							break;
+						case 2:
+							FileWriter overWrite = new FileWriter(filenameInc,false);
+							overWrite.write(list.printIncDots ());
+							overWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameInc);
+							break;
+						case 3:
+							break;
+						}
+					}
 					break;
 				case 3:
-					list.printDecDots();
+					System.out.println("Введите имя файла:");
+					s = scan.next();
+					String filenameDec = s;
+					File inputFileDec = new File(filenameDec);
+					if(inputFileDec.createNewFile()) {
+						FileWriter myWriter = new FileWriter(filenameDec);
+					      myWriter.write(list.printDecDots());
+					      myWriter.close();
+					      System.out.println("Успешно записано в файл "+ filenameDec);
+					}
+					else {
+						System.out.println("Файл уже существует! Выберите опцию:");
+						System.out.println("1. Записать в конец файла");
+						System.out.println("2. Перезаписать файл");
+						System.out.println("3. Вернуться назад");
+						int jofile;
+						s = scan.next();
+						jofile = Integer.parseInt(s);
+						if (jofile<1 || jofile>3) {
+							System.out.println("Неправильная опция!");
+							continue;
+						}
+						switch(jofile) {
+						case 1:
+							FileWriter appendWrite = new FileWriter(filenameDec,true);
+							appendWrite.write(list.printDecDots());
+							appendWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameDec);
+							break;
+						case 2:
+							FileWriter overWrite = new FileWriter(filenameDec,false);
+							overWrite.write(list.printDecDots());
+							overWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameDec);
+							break;
+						case 3:
+							break;
+						}
+					}
 					break;
 				}
 				break;
@@ -158,18 +243,133 @@ public class pz04 {
 				System.out.println("1. Стандартный вид");
 				System.out.println("2. По возрастанию");
 				System.out.println("3. По убыванию");
-				int jjo;
+				int sjo;
 				s = scan.next();
-				jjo = Integer.parseInt(s);
-				switch(jjo) {
+				sjo = Integer.parseInt(s);
+				switch(sjo) {
 				case 1:
-					System.out.print(list.toStringCircles());
+					System.out.println("Введите имя файла:");
+					s = scan.next();
+					String filename = s;
+					File inputFile = new File(filename);
+					if(inputFile.createNewFile()) {
+						FileWriter myWriter = new FileWriter(filename);
+					      myWriter.write(list.toStringCircles());
+					      myWriter.close();
+					      System.out.println("Успешно записано в файл "+ filename);
+					}
+					else {
+						System.out.println("Файл уже существует! Выберите опцию:");
+						System.out.println("1. Записать в конец файла");
+						System.out.println("2. Перезаписать файл");
+						System.out.println("3. Вернуться назад");
+						int jofile;
+						s = scan.next();
+						jofile = Integer.parseInt(s);
+						if (jofile<1 || jofile>3) {
+							System.out.println("Неправильная опция!");
+							continue;
+						}
+						switch(jofile) {
+						case 1:
+							FileWriter appendWrite = new FileWriter(filename,true);
+							appendWrite.write(list.toStringCircles());
+							appendWrite.close();
+						    System.out.println("Успешно записано в файл "+ filename);
+							break;
+						case 2:
+							FileWriter overWrite = new FileWriter(filename,false);
+							overWrite.write(list.toStringCircles());
+							overWrite.close();
+						    System.out.println("Успешно записано в файл "+ filename);
+							break;
+						case 3:
+							break;
+						}
+
+					}
 					break;
-				case 2: 
-					list.printIncCircle();
+				case 2:
+					System.out.println("Введите имя файла:");
+					s = scan.next();
+					String filenameInc = s;
+					File inputFileInc = new File(filenameInc);
+					if(inputFileInc.createNewFile()) {
+						FileWriter myWriter = new FileWriter(filenameInc);
+					      myWriter.write(list.printIncCircle());
+					      myWriter.close();
+					      System.out.println("Успешно записано в файл "+ filenameInc);
+					}
+					else {
+						System.out.println("Файл уже существует! Выберите опцию:");
+						System.out.println("1. Записать в конец файла");
+						System.out.println("2. Перезаписать файл");
+						System.out.println("3. Вернуться назад");
+						int jofile;
+						s = scan.next();
+						jofile = Integer.parseInt(s);
+						if (jofile<1 || jofile>3) {
+							System.out.println("Неправильная опция!");
+							continue;
+						}
+						switch(jofile) {
+						case 1:
+							FileWriter appendWrite = new FileWriter(filenameInc,true);
+							appendWrite.write(list.printIncCircle());
+							appendWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameInc);
+							break;
+						case 2:
+							FileWriter overWrite = new FileWriter(filenameInc,false);
+							overWrite.write(list.printIncCircle());
+							overWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameInc);
+							break;
+						case 3:
+							break;
+						}
+					}
 					break;
 				case 3:
-					list.printDecCircle();
+					System.out.println("Введите имя файла:");
+					s = scan.next();
+					String filenameDec = s;
+					File inputFileDec = new File(filenameDec);
+					if(inputFileDec.createNewFile()) {
+						FileWriter myWriter = new FileWriter(filenameDec);
+					      myWriter.write(list.printDecCircle());
+					      myWriter.close();
+					      System.out.println("Успешно записано в файл "+ filenameDec);
+					}
+					else {
+						System.out.println("Файл уже существует! Выберите опцию:");
+						System.out.println("1. Записать в конец файла");
+						System.out.println("2. Перезаписать файл");
+						System.out.println("3. Вернуться назад");
+						int jofile;
+						s = scan.next();
+						jofile = Integer.parseInt(s);
+						if (jofile<1 || jofile>3) {
+							System.out.println("Неправильная опция!");
+							continue;
+						}
+						switch(jofile) {
+						case 1:
+							FileWriter appendWrite = new FileWriter(filenameDec,true);
+							appendWrite.write(list.printDecCircle());
+							appendWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameDec);
+							break;
+						case 2:
+							FileWriter overWrite = new FileWriter(filenameDec,false);
+							overWrite.write(list.printDecCircle());
+							overWrite.close();
+						    System.out.println("Успешно записано в файл "+ filenameDec);
+							break;
+						case 3:
+							break;
+						}
+					}
 					break;
 				}
 				break;
